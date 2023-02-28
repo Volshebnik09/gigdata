@@ -1,0 +1,59 @@
+<template>
+  <a class="BtnSmall">{{text}}</a>
+</template>
+
+<script>
+export default {
+  name:"BtnSmall",
+  props:{
+    text: String,
+    to: {
+      require: true,
+      type: String
+    },
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.BtnSmall{
+  text-align: center;
+  border: 3px solid #0049B7;
+  border-radius: 80px;
+  padding: 10px 40px;
+  font-family: 'Manrope', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  /* identical to box height */
+  white-space: nowrap;
+  display: inline-block;
+
+  /* Text */
+
+  color: #001223;
+  &:hover{
+    background: #CCE0FF;
+  }
+  &:active{
+    background: #0049B7;
+    color: #FFFFFF;
+  }
+  &:disabled{
+    border-color: #B0BED3;
+    color: #404C5C;;
+  }
+}
+@media (max-width: 641px) {
+  .BtnSmall{
+    font-style: normal;
+    font-weight: 600;
+    padding: 10px 0;
+    font-size: 16px;
+    line-height: 22px;
+    color: #001223;
+  }
+}
+
+</style>

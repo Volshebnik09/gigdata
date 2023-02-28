@@ -1,0 +1,134 @@
+@import "fonts";
+@import "variables";
+@import "mixins";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+html {
+  background: #F5F5F5;
+}
+.container {
+  width: 100%;
+  max-width: 1278px;
+  padding: 0 24px;
+  margin: auto;
+}
+img {
+  user-select: none;
+}
+h1 {
+  font-family: 'Manrope', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 52px;
+  line-height: 100%;
+  /* or 52px */
+
+  letter-spacing: 0.005em;
+  color: $colorText;
+  span {
+    color: #0046D3;
+  }
+}
+h2{
+  font-family: 'Manrope', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 100%;
+  /* identical to box height, or 40px */
+
+  letter-spacing: 0.005em;
+
+  /* Text */
+
+  color: #001223;
+
+}
+
+a {
+  font-family: 'Mulish', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+
+  color: $colorText;
+}
+
+p {
+  @include mainText
+}
+
+.btn-UI{
+  font-family: 'Manrope', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  /* identical to box height */
+
+
+  /* Text */
+
+  color: $colorText;
+}
+
+h3{
+  font-family: 'Manrope',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  color: $colorH3blue
+}
+
+@media (max-width: 641px) {
+  .container {
+    width: 100%;
+    max-width: 1278px;
+    padding: 0 15px;
+  }
+  a {
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.015em;
+    text-decoration: none;
+
+    color: $colorText;
+  }
+  h1 {
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0.005em;
+  }
+  h2{
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: 0.005em;
+    color: #001223;
+
+  }
+  h3{
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 100%;
+    color: $colorH3blue;
+  }
+}
