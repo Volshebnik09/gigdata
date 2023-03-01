@@ -1,11 +1,7 @@
 <template>
   <fragment>
     <HeaderC/>
-    <MainScreenC1/>
-    <PossibilitiesC/>
-    <ForYourBusinessC/>
-    <StillThinkingC/>
-    <CostC/>
+    <MainScreenC2/>
     <footerC/>
   </fragment>
 </template>

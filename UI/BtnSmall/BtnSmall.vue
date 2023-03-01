@@ -1,5 +1,5 @@
 <template>
-  <a class="BtnSmall">{{text}}</a>
+  <router-link :to="to" class="BtnSmall">{{text}}</router-link>
 </template>
 
 <script>

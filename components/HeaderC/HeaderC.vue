@@ -41,7 +41,6 @@ export default {
   computed: {
     windowWidth: {
       get() {
-        console.log(this.$store.getters.windowWidth);
         return this.$store.getters.windowWidth
       }
     }

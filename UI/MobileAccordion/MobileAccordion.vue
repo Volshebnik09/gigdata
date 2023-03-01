@@ -39,7 +39,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/styles/mixins.scss";
+@import "@/styles/mixins.scss";
 .mobileAccordion {
   background: #FFFFFF;
   border-radius: 20px;
