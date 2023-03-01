@@ -60,7 +60,7 @@ export default {
 <style lang="scss" scoped>
 
 .header {
-  padding-top: 3.8%;
+  padding-top: 70px;
   .container{
     height: 54px;
     display: flex;
