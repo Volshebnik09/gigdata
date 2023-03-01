@@ -3,6 +3,7 @@
     <HeaderC/>
     <MainScreenC2/>
     <ETRDWE/>
+    <ExperienceItYourself/>
     <footerC/>
   </fragment>
 </template>

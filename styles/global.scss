@@ -55,7 +55,9 @@ h2{
   color: #001223;
 
 }
-
+h4{
+  @include h4;
+}
 a {
   font-family: 'Mulish', sans-serif;
   font-style: normal;
