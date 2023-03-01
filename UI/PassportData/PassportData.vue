@@ -22,7 +22,6 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import "@/styles/mixins.scss";
 .PassportData__card {
-  min-height: 240px;
   background: linear-gradient(263.89deg, #E5E1FF 18.89%, #DEE9FF 110.43%);
   border-radius: 40px;
   display: flex;
@@ -31,7 +30,6 @@ export default Vue.extend({
   padding: 17px 37px;
   gap: 20px;
   width: 100%;
-  max-width: 400px;
   border: 3px solid transparent;
   transition: 0.2s;
   cursor: pointer;
@@ -48,6 +46,7 @@ export default Vue.extend({
     .PassportData__card {
       border-radius: 20px;
       min-height: 180px;
+      padding: 17px;
     }
 
 }

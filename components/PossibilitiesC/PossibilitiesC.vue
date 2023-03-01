@@ -67,7 +67,9 @@ export default {
     grid-template-rows: repeat(auto-fill, 1fr);
     justify-items: center;
     flex-wrap: wrap;
-
+     & > div {
+      min-height: 240px;
+    }
 
   }
 }
@@ -87,8 +89,7 @@ export default {
     &__card-holder {
       margin-top: 12%;
       grid-template-columns: 1fr;
-      &__card {
-        border-radius: 20px;
+      & >div {
         min-height: 180px;
       }
     }

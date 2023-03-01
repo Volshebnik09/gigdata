@@ -2,6 +2,7 @@
   <fragment>
     <HeaderC/>
     <MainScreenC2/>
+    <ETRDWE/>
     <footerC/>
   </fragment>
 </template>
