@@ -1,1 +1,0 @@
-window.__NUXT__=(function(a){return {staticAssetsBase:"\u002Fgigdata\u002Fstatic\u002F1677663049",layout:"default",error:{statusCode:404,path:a,message:"This page could not be found"},state:{windowWidth:0},serverRendered:false,routePath:a,config:{_app:{basePath:"\u002F",assetsPath:"\u002Fgigdata\u002F",cdnURL:null}}}}("\u002F%D0%A2%D0%B0%D1%80%D0%B8%D1%84%D1%8B"));

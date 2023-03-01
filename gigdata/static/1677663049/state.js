@@ -1,1 +1,0 @@
-window.__NUXT__=(function(a,b){return {staticAssetsBase:"\u002Fgigdata\u002Fstatic\u002F1677663049",layout:"default",error:a,state:{windowWidth:0},serverRendered:true,routePath:b,config:{_app:{basePath:b,assetsPath:"\u002Fgigdata\u002F",cdnURL:a}}}}(null,"\u002F"));
