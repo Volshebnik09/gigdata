@@ -108,14 +108,45 @@ export default Vue.extend({
         {
           id:1,
           title:"ФИО по полям",
+          body: [
+            {
+              id: 0,
+              title:"Фамилия",
+              placeholder: "Введите фамилию"
+            },
+            {
+              id: 1,
+              title:"Имя",
+              placeholder: "Введите Имя"
+            },
+            {
+              id: 2,
+              title:"Отчество (если есть)",
+              placeholder: "Введите Отчество"
+            },
+          ]
         },
         {
           id:2,
           title:"Организация",
+          body: [
+            {
+              id:0,
+              title: "Организация или ИП",
+              placeholder: "Название в свободной форме"
+            }
+          ]
         },
         {
           id:3,
           title:"E-mail",
+          body: [
+            {
+              id:0,
+              title: "Email",
+              placeholder: "Введите адрес электронной почты"
+            }
+          ]
         }
       ] as TPage[],
       currentPage: 0

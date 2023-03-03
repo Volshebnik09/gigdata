@@ -4,6 +4,7 @@
     <MainScreenC2/>
     <ETRDWE/>
     <ExperienceItYourself/>
+    <HowToConnect/>
     <footerC/>
   </fragment>
 </template>
