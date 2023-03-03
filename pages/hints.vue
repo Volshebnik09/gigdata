@@ -5,6 +5,7 @@
     <ETRDWE/>
     <ExperienceItYourself/>
     <HowToConnect/>
+    <BoxedVersion/>
     <footerC/>
   </fragment>
 </template>
