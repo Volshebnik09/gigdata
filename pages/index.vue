@@ -1,40 +1,17 @@
 <template>
   <fragment>
-    <HeaderC/>
     <MainScreenC1/>
     <PossibilitiesC/>
     <ForYourBusinessC/>
     <StillThinkingC/>
     <CostC/>
-    <footerC/>
   </fragment>
 </template>
 
 <script>
-
-import throttle from "@/helpers/throttle";
 import {Fragment} from "vue-frag"
-let onResizeThrottled
 export default {
   name: 'IndexPage',
-
-  mounted() {
-    onResizeThrottled = throttle(()=>this.onResize(), 100)
-    window.addEventListener("resize", onResizeThrottled);
-    onResizeThrottled()
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", onResizeThrottled)
-  },
-  methods: {
-    onResize(){
-      this.$store.commit("setWindowWidth", window.innerWidth)
-    },
-  },
   components: {Fragment},
 }
 </script>
-
-<style lang="scss">
-@import "@/styles/global.scss";
-</style>

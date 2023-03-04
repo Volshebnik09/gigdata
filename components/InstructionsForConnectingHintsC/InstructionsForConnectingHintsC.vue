@@ -4,7 +4,7 @@
       <h2>Иструкции по подключению «Подсказок»</h2>
       <div class="instructionsForConnectingHints__cards">
         <router-link to="#"><h4>ФИО</h4></router-link>
-        <router-link to="#"><h4>Адреса</h4></router-link>
+        <router-link to="howToConnectHints/address"><h4>Адреса</h4></router-link>
         <router-link to="#"><h4>ОКТМО</h4></router-link>
         <router-link to="#"><h4>E-mail</h4></router-link>
         <router-link to="#"><h4>ОКВЭД</h4></router-link>
