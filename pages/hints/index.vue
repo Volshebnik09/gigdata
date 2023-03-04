@@ -16,7 +16,7 @@ import throttle from "@/helpers/throttle";
 import {Fragment} from "vue-frag"
 let onResizeThrottled
 export default {
-  name: 'IndexPage',
+  name: 'hintsPage',
 
   mounted() {
     onResizeThrottled = throttle(()=>this.onResize(), 100)
