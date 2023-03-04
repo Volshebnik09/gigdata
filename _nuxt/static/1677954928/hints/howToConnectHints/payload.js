@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/hints/howToConnectHints", {data:[{}],fetch:{},mutations:[]});
