@@ -77,6 +77,7 @@ export default Vue.extend({
       }
       &__item-dropdown {
         &__title{
+          cursor: pointer;
           border-bottom: 2px solid #8100AE;
         }
         &__caption {
