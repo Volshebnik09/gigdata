@@ -145,7 +145,7 @@ export default {
 
 @media (max-width: 640px) {
   .footer{
-    margin-top: 13%;
+    margin-top: 100px;
     .container {
       padding: 0 24px;
       grid-template-areas: "logo"

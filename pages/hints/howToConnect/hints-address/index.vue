@@ -3,6 +3,9 @@
     <MainScreenC3/>
     <HowToConnect2/>
     <AnswerC1/>
+    <AdministrativeAndMunicipalDivision/>
+    <CoordinatesAreaAndCost/>
+    <OpportunitiesAndLimitations/>
   </fragment>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="customTable">
-    <div class="customTable__head">
+    <div class="customTable__head" v-if="table.header">
       <div :class="'customTable__head__item '+ 'column-'+index"
            v-for="(header,index) in table.header" :key="index">{{ header }}</div>
     </div>
@@ -26,7 +26,7 @@ type TCustomTableBodyCell = String | {
   caption:String
 }
 export type TCustomTable = {
-  header: string[],
+  header?: string[],
   body:TCustomTableBodyCell[][]
 }
 export default Vue.extend({

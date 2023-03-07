@@ -19,6 +19,7 @@
     <NavMobileC
       :open-or-close="isNavMobileOpen"
       @closeNavEvent="closeNavMobile()"
+      :style="windowWidth<1200?'':'display:none;'"
     />
   </header>
 </template>

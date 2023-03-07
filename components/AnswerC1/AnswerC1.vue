@@ -6,6 +6,27 @@
       <CustomTable
         :table="table"
       />
+      <h3>
+        Дополнительные поля, заполняются в зависимости от тарифа
+      </h3>
+      <p>Заполняются при выборе конкретной подсказки. До этого они пустые</p>
+      <h4>Все тарифы</h4>
+      <customTable
+        :table="table1"
+      />
+      <h4>«Расширенный» и «Максимальный»</h4>
+      <customTable
+        :table="table2"
+      />
+      <h4>«Максимальный»</h4>
+      <customTable
+        :table="table3"
+      />
+      <h4>Зарезервированы для автоматической обработки адресов через API стандартизации</h4>
+      <customTable
+        :table="table4"
+        class="answerC1__table-4"
+      />
     </div>
   </section>
 </template>
@@ -356,7 +377,140 @@ export default Vue.extend({
             "Если подсказка до улицы — это прошлые названия этой улицы, если до города — города"
           ]
         ]
-      } as TCustomTable
+      } as TCustomTable,
+      table1 :{
+        header: ["Название","Описание"],
+        body: [
+          [
+            "data.geo_lat",
+            "Координаты: широта"
+          ],
+          [
+            "data.geo_lon",
+            "Координаты: долгота"
+          ],
+          [
+            "data.qc_geo",
+            {
+              title:"Код точности координат:",
+              caption:
+              "  0 — страна\n" +
+              "  1 — регион\n" +
+              "  3 — район\n" +
+              "  4 — город\n" +
+              "  5 — район города\n" +
+              "  6 — населенный пункт\n" +
+              "  7 — улица\n" +
+              "  8 — дом\n" +
+              "  9 — квартира\n" +
+              " 65 — планировочная структура\n" +
+              " 75 — земельный участок\n" +
+              " -1 — иностранный или пустой"
+            }
+          ],
+          [
+            "data.fias_actuality_state",
+            {
+              title:"Признак актуальности адреса в ФИАС",
+              caption:
+              "  0 — точные координаты\n" +
+              "  1 — ближайший дом\n" +
+              "  2 — улица\n" +
+              "  3 — населенный пункт\n" +
+              "  4 — город\n" +
+              "  5 — координаты не определены"
+            }
+          ],
+          [
+            "data.city_area",
+            "Административный округ (только для Москвы)"
+          ]
+        ]
+      } as TCustomTable,
+      table2 :{
+        body: [
+          [
+            "data.beltway_hit",
+            "Внутри кольцевой?"
+          ],
+          [
+            "data.beltway_distance",
+            "Расстояние от кольцевой в километрах"
+          ]
+        ]
+      } as TCustomTable,
+      table3 :{
+        body: [
+          [
+            "data.stead_cadnum",
+            "Кадастровый номер земельного участка"
+          ],
+          [
+            "data.house_cadnum",
+            "Кадастровый номер дома"
+          ],
+          [
+            "data.flat_cadnum",
+            "Кадастровый номер квартиры"
+          ],
+          [
+            "data.flat_area",
+            "Площадь квартиры"
+          ],
+          [
+            "data.square_meter_price",
+            "Рыночная стоимость м²"
+          ],
+          [
+            "data.flat_price",
+            "Рыночная стоимость квартиры"
+          ],
+          [
+            "data.timezone",
+            "Часовой пояс"
+          ],
+          [
+            "data.metro[ ]",
+            "Список ближайших станций метро (до трёх штук)"
+          ],
+          [
+            "└ name",
+            "— название станции"
+          ],
+          [
+            "└ line",
+            "— название линии"
+          ],
+          [
+            "└ distance",
+            "— расстояние до станции в километрах"
+          ]
+        ]
+      } as TCustomTable,
+      table4 :{
+        body: [
+          [
+            "data.qc_complete",
+            "не заполняется"
+          ],
+          [
+            "data.qc_house",
+            "не заполняется"
+          ],
+          [
+            "data.qc",
+            "не заполняется"
+          ],
+          [
+            "data.source",
+            "не заполняется"
+          ],
+          [
+            "data.unparsed_parts",
+            "не заполняется"
+          ]
+        ]
+      } as TCustomTable,
 
     }
   }
@@ -372,6 +526,24 @@ export default Vue.extend({
   h3{
     margin-top: 20px;
     color: $colorText;
+  }
+  h3:nth-child(4){
+    margin-top: 60px;
+  }
+  p:nth-child(5){
+    margin-top: 20px;
+  }
+  h4{
+    margin-top: 40px;
+  }
+  &__table-4::v-deep{
+    .customTable__body{
+      gap:40px;
+      background: linear-gradient(265.14deg, rgba(185, 178, 226, 0.3) 10.77%, rgba(182, 200, 236, 0.3) 99.08%), #FFFFFF;
+      span{
+        color:$light;
+      }
+    }
   }
 }
 @media (max-width: 640px){
