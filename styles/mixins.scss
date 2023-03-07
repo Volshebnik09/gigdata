@@ -70,3 +70,42 @@
     color: $colorText;
   }
 }
+
+@mixin smallText {
+  font-family: 'Manrope', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  /* identical to box height, or 16px */
+
+  letter-spacing: 0.005em;
+
+  /* Text */
+
+  color: $colorText;
+
+  @media (max-width: 641px) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    /* identical to box height, or 14px */
+
+    letter-spacing: 0.005em;
+  }
+}
+
+@mixin links {
+  font-family: 'Mulish', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: -0.015em;
+  text-decoration-line: underline;
+
+  /* Color H3 violet */
+
+  color: $colorH3Violet;
+}

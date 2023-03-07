@@ -9,8 +9,7 @@
 <script>
 import {Fragment} from "vue-frag"
 export default {
-  name: 'howToConnectHintsPage',
-  components: {Fragment},
+  components: {Fragment}
 }
 </script>
 

@@ -1,8 +1,8 @@
 <template>
   <nav>
-    <router-link to="hints">Подсказки</router-link>
-    <router-link to="API">API</router-link>
-    <router-link to="Тарифы">Тарифы</router-link>
+    <router-link to="/hints">Подсказки</router-link>
+    <router-link to="/API">API</router-link>
+    <router-link to="/Тарифы">Тарифы</router-link>
   </nav>
 </template>
 
