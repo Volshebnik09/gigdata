@@ -2,6 +2,7 @@
   <fragment>
     <MainScreenC3/>
     <HowToConnect2/>
+    <AnswerC1/>
   </fragment>
 </template>
 

@@ -57,6 +57,11 @@ export default {
     }
   }
 }
+@media (max-width: 1200px) and (min-width: 641px){
+  .mainScreenC3 {
+    margin-top: 80px;
+  }
+}
 @media (max-width: 640px) {
   .mainScreenC3{
     margin-top: 35px;
