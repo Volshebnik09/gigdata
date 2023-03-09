@@ -1,23 +1,39 @@
 <template>
-  <router-link :to="to" class="BtnFulfilled">{{text}}</router-link>
+  <button
+    type="submit"
+    v-if="type === 'submit'"
+  >{{text}}
+  </button>
+  <router-link
+    v-else
+    :to="to"
+    class="BtnFulfilled"
+  >{{text}}
+  </router-link>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+
+import Vue, {PropType} from "vue";
+
+type TBtnType = "submit" | undefined
+export default Vue.extend({
   name: "BtnFulfilled",
   props:{
     text: String,
+    type: String as PropType<TBtnType>,
     to: {
-      require: true,
-      type: String
-    },
+      type: String,
+      default: ''
+    }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>
 .BtnFulfilled{
   text-align: center;
+  user-select: none;
   font-family: 'Manrope', sans-serif;
   font-style: normal;
   font-weight: 600;

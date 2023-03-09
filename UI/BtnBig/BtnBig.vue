@@ -18,6 +18,7 @@ export default {
 <style lang="scss" scoped>
 .BtnBig{
   text-align: center;
+  user-select: none;
   border-radius: 80px;
   padding: 20px 40px;
   border: 3px solid #1700A5;

@@ -1,6 +1,12 @@
 <template>
   <div class="inputUI-holder">
-    <input :placeholder="placeholder" class="inputUI" :disabled="disable" @input="inputEmit"/>
+    <input
+      :placeholder="placeholder"
+      class="inputUI"
+      :disabled="disable"
+      @input="inputEmit"
+      :type="type?type:'text'"
+    />
     <span v-if="notify">{{notify.message}}</span>
     <img :src="require('@/images/Group (3).svg')" alt="" v-if="notify?.type === 1">
     <img :src="require('@/images/Group (4).svg')" alt="" v-if="notify?.type === 2">
@@ -19,12 +25,15 @@ type TNotify = {
   type: ENotification,
   message:string
 }
+
+type TInputType = "email" | "password" | "tel" | "text" | "number" | undefined
 export default Vue.extend({
   name:"InputUI",
   props: {
     placeholder: String,
     text:String,
     disable:Boolean,
+    type: String as PropType<TInputType>,
     notify: Object as PropType<TNotify>
   },
   methods: {

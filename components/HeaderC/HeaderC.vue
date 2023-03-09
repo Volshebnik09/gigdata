@@ -1,27 +1,40 @@
 <template>
-  <header class="header">
-    <div class="container">
-      <router-link to="/">
-        <img :src="require('@/images/logo.svg')" class="header__logo" alt="">
-      </router-link>
-      <NavC class="header__nav"/>
-      <div class="header__right-block">
-        <AccountC v-if="false"
-                  :name="windowWidth > 1200? 'Иван иванов' : ''"
-        />
-        <BtnSmall to="#" text="Войти" v-else-if="windowWidth > 1200"/>
-        <router-link to="#" v-else>
-          <img :src="require('@/images/Group (2).svg')" alt="" >
+  <fragment>
+    <header class="header">
+      <div class="container">
+        <router-link to="/">
+          <img :src="require('@/images/logo.svg')" class="header__logo" alt="">
         </router-link>
-        <img :src="require('@/images/Frame 607.svg')" alt="" class="header__right-block__navMobileC-btn" @click="openNavMobile()">
+        <NavC class="header__nav"/>
+        <div class="header__right-block">
+          <AccountC v-if="false"
+                    :name="windowWidth > 1200? 'Иван иванов' : ''"
+          />
+          <BtnSmall
+            text="Войти"
+            v-else-if="windowWidth > 1200"
+            @click="openLoginForm"
+          />
+          <router-link to="#" v-else>
+            <img :src="require('@/images/Group (2).svg')" alt="" >
+          </router-link>
+          <img :src="require('@/images/Frame 607.svg')" alt="" class="header__right-block__navMobileC-btn" @click="openNavMobile()">
+        </div>
       </div>
-    </div>
-    <NavMobileC
-      :open-or-close="isNavMobileOpen"
-      @closeNavEvent="closeNavMobile()"
-      :style="windowWidth<1200?'':'display:none;'"
-    />
-  </header>
+      <NavMobileC
+        :open-or-close="isNavMobileOpen"
+        @closeNavEvent="closeNavMobile()"
+        :style="windowWidth<1200?'':'display:none;'"
+      />
+    </header>
+    <teleport
+      v-if="isLoginFormOpen"
+      to="html">
+      <LoginPopupC
+        @closeEvent="()=>isLoginFormOpen=false"
+      />
+    </teleport>
+  </fragment>
 </template>
 
 <script>
@@ -30,13 +43,16 @@ import AccountC from "@/components/HeaderC/AccountC/AccountC.vue";
 import BtnSmall from "@/UI/BtnSmall/BtnSmall.vue";
 import Vue from "vue";
 import NavMobileC from "@/components/HeaderC/NavMobileC/NavMobileC.vue";
+import {Fragment} from "vue-frag";
+import Teleport from "vue2-teleport"
 
 export default {
   name:"HeaderC",
-  components: {NavMobileC, BtnSmall, AccountC, NavC},
+  components: {NavMobileC, BtnSmall, AccountC, NavC, Fragment, Teleport},
   data: function(){
     return {
-      isNavMobileOpen: false
+      isNavMobileOpen: false,
+      isLoginFormOpen: false,
     }
   },
   computed: {
@@ -53,6 +69,9 @@ export default {
     closeNavMobile: function (){
       this.isNavMobileOpen = false
     },
+    openLoginForm: function (){
+      this.isLoginFormOpen = true
+    }
   }
 
 }

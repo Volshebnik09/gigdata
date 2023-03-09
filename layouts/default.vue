@@ -1,7 +1,9 @@
 <template>
   <fragment>
     <headerC/>
-    <Nuxt />
+      <main>
+        <Nuxt />
+      </main>
     <footer-c/>
   </fragment>
 </template>
@@ -23,6 +25,7 @@ export default {
   methods: {
     onResize(){
       this.$store.commit("setWindowWidth", window.innerWidth)
+      this.$store.commit("setWindowHeight", window.innerHeight)
     },
   },
 }

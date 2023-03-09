@@ -1,5 +1,15 @@
 <template>
-  <router-link :to="to" class="BtnSmall">{{text}}</router-link>
+  <a
+    v-if="!to"
+    @click="clickEmit"
+    class="BtnSmall"
+  >{{text}}</a>
+  <router-link
+    v-else
+    :to="to"
+    class="BtnSmall"
+    @click="clickEmit"
+  >{{text}}</router-link>
 </template>
 
 <script>
@@ -7,16 +17,19 @@ export default {
   name:"BtnSmall",
   props:{
     text: String,
-    to: {
-      require: true,
-      type: String
-    },
+    to: String,
+  },
+  methods: {
+    clickEmit: function (e){
+      this.$emit('click', e)
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .BtnSmall{
+  user-select: none;
   text-align: center;
   border: 3px solid #0049B7;
   border-radius: 80px;
@@ -29,6 +42,7 @@ export default {
   /* identical to box height */
   white-space: nowrap;
   display: inline-block;
+  cursor: pointer;
 
   /* Text */
 
