@@ -1,37 +1,30 @@
 <template>
-  <a
-    v-if="!to"
-    @click="clickEmit"
-    class="BtnSmall"
-  >{{text}}</a>
-  <router-link
-    v-else
-    :to="to"
-    class="BtnSmall"
-    @click="clickEmit"
-  >{{text}}</router-link>
+  <a v-if="!to" @click="clickEmit" class="BtnSmall">{{ text }}</a>
+  <router-link v-else :to="to" class="BtnSmall" @click="clickEmit">{{
+    text
+  }}</router-link>
 </template>
 
 <script>
 export default {
-  name:"BtnSmall",
-  props:{
+  name: 'BtnSmall',
+  props: {
     text: String,
     to: String,
   },
   methods: {
-    clickEmit: function (e){
+    clickEmit: function (e) {
       this.$emit('click', e)
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-.BtnSmall{
+.BtnSmall {
   user-select: none;
   text-align: center;
-  border: 3px solid #0049B7;
+  border: 3px solid #0049b7;
   border-radius: 80px;
   padding: 10px 40px;
   font-family: 'Manrope', sans-serif;
@@ -47,20 +40,20 @@ export default {
   /* Text */
 
   color: #001223;
-  &:hover{
-    background: #CCE0FF;
+  &:hover {
+    background: #cce0ff;
   }
-  &:active{
-    background: #0049B7;
-    color: #FFFFFF;
+  &:active {
+    background: #0049b7;
+    color: #ffffff;
   }
-  &:disabled{
-    border-color: #B0BED3;
-    color: #404C5C;;
+  &:disabled {
+    border-color: #b0bed3;
+    color: #404c5c;
   }
 }
 @media (max-width: 641px) {
-  .BtnSmall{
+  .BtnSmall {
     font-style: normal;
     font-weight: 600;
     padding: 10px 0;
@@ -69,5 +62,4 @@ export default {
     color: #001223;
   }
 }
-
 </style>

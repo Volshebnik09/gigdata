@@ -5,48 +5,56 @@
       class="inputUI"
       :disabled="disable"
       @input="inputEmit"
-      :type="type?type:'text'"
+      :type="type ? type : 'text'"
     />
-    <span v-if="notify">{{notify.message}}</span>
-    <img :src="require('@/images/Group (3).svg')" alt="" v-if="notify?.type === 1">
-    <img :src="require('@/images/Group (4).svg')" alt="" v-if="notify?.type === 2">
+    <span v-if="notify">{{ notify.message }}</span>
+    <img
+      :src="require('@/images/Group (3).svg')"
+      alt=""
+      v-if="notify?.type === 1"
+    />
+    <img
+      :src="require('@/images/Group (4).svg')"
+      alt=""
+      v-if="notify?.type === 2"
+    />
   </div>
 </template>
 
 <script lang="ts">
-import Vue, {PropType} from "vue";
+import Vue, { PropType } from 'vue'
 
 enum ENotification {
-  Error="Error",
-  Succeed="Succeed"
+  Error = 'Error',
+  Succeed = 'Succeed',
 }
 
 type TNotify = {
-  type: ENotification,
-  message:string
+  type: ENotification
+  message: string
 }
 
-type TInputType = "email" | "password" | "tel" | "text" | "number" | undefined
+type TInputType = 'email' | 'password' | 'tel' | 'text' | 'number' | undefined
 export default Vue.extend({
-  name:"InputUI",
+  name: 'InputUI',
   props: {
     placeholder: String,
-    text:String,
-    disable:Boolean,
+    text: String,
+    disable: Boolean,
     type: String as PropType<TInputType>,
-    notify: Object as PropType<TNotify>
+    notify: Object as PropType<TNotify>,
   },
   methods: {
-    inputEmit: function(e:Event){
-      this.$emit("input",e)
-    }
-  }
+    inputEmit: function (e: Event) {
+      this.$emit('input', e)
+    },
+  },
 })
 </script>
 
 <style lang="scss" scoped>
 .inputUI {
-  border: 3px solid #0049B7;
+  border: 3px solid #0049b7;
   padding: 7px 17px;
   border-radius: 50px;
   background: transparent;
@@ -63,7 +71,7 @@ export default Vue.extend({
   color: #001223;
   &::placeholder {
     position: absolute;
-    top:50%;
+    top: 50%;
     transform: translateY(-50%);
     font-family: 'Mulish', sans-serif;
     font-style: normal;
@@ -72,30 +80,30 @@ export default Vue.extend({
     line-height: 30px;
     letter-spacing: -0.015em;
 
-    color: #404C5C;
+    color: #404c5c;
   }
-  &:hover{
-    background: #CCE0FF;
-    &::placeholder{
+  &:hover {
+    background: #cce0ff;
+    &::placeholder {
       color: #003260;
     }
   }
-  &:focus{
-    background: #FFFFFF;
+  &:focus {
+    background: #ffffff;
   }
   &:disabled {
-    background: #F2F7FE;
-    &::placeholder{
-      color: #69696A;
+    background: #f2f7fe;
+    &::placeholder {
+      color: #69696a;
     }
   }
 }
 @media (max-width: 640px) {
-  .inputUI{
+  .inputUI {
     padding: 12px 8px;
     border-width: 2px;
     border-radius: 54px;
-    &::placeholder{
+    &::placeholder {
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
@@ -105,7 +113,7 @@ export default Vue.extend({
 
       /* light */
 
-      color: #8FA0B7;
+      color: #8fa0b7;
     }
   }
 }

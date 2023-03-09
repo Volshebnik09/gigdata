@@ -1,6 +1,6 @@
 <template>
   <div class="whiteForm">
-    <h3>{{card.title}}</h3>
+    <h3>{{ card.title }}</h3>
     <ul>
       <li v-for="li in card.ul" :key="li.id">{{ li.text }}</li>
     </ul>
@@ -8,27 +8,26 @@
 </template>
 
 <script lang="ts">
-import Vue, {PropType} from "vue";
+import Vue, { PropType } from 'vue'
 
 type TCard = {
-  title: string,
+  title: string
   ul: {
-    id:number,
-    text:string,
+    id: number
+    text: string
   }[]
 }
 export default Vue.extend({
   props: {
-    card: Object as PropType<TCard>
-  }
+    card: Object as PropType<TCard>,
+  },
 })
 </script>
 
 <style lang="scss" scoped>
-
-@import "@/styles/mixins.scss";
+@import '@/styles/mixins.scss';
 .whiteForm {
-  background: #FFFFFF;
+  background: #ffffff;
   width: 100%;
   border-radius: 40px;
   display: flex;
@@ -47,9 +46,9 @@ export default Vue.extend({
       @include mainText;
       font-weight: 300;
       &:before {
-        content: "";
+        content: '';
         position: absolute;
-        background: linear-gradient(265.14deg, #E2DDFF 10.77%, #B6C8EC 99.08%);
+        background: linear-gradient(265.14deg, #e2ddff 10.77%, #b6c8ec 99.08%);
         border-radius: 3px;
         left: 0;
         top: 11px;

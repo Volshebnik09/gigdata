@@ -1,9 +1,13 @@
 <template>
   <a class="account-c">
     <p class="account-c__name" v-if="name">
-      {{name}}
+      {{ name }}
     </p>
-    <img :src="require('@/images/Group (1).svg')" alt="" class="account-c__img">
+    <img
+      :src="require('@/images/Group (1).svg')"
+      alt=""
+      class="account-c__img"
+    />
   </a>
 </template>
 
@@ -13,23 +17,21 @@
  * Со ссылкой на лк
  */
 export default {
-  name:"AccountC",
+  name: 'AccountC',
   props: {
     name: String,
-  }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .account-c {
   display: flex;
-  gap:10px;
+  gap: 10px;
   align-items: center;
-  &__name{
-
+  &__name {
   }
-  &__img{
-
+  &__img {
   }
 }
 </style>

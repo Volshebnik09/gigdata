@@ -3,54 +3,61 @@
     <div class="container">
       <div class="howToConnect__card">
         <h2>Как подключить?</h2>
-        <p>Чтобы внедрить на сайт быстрый ввод данных, используя “Подсказки”, необходимо выполнить несколько шагов. Мы подготоили для вас подробную инструкцию, как это сделать</p>
-        <btn-big :text="windowWidth>640? 'Прочитать инструкцию':'купить'" to="hints/howToConnect"/>
+        <p>
+          Чтобы внедрить на сайт быстрый ввод данных, используя “Подсказки”,
+          необходимо выполнить несколько шагов. Мы подготоили для вас подробную
+          инструкцию, как это сделать
+        </p>
+        <btn-big
+          :text="windowWidth > 640 ? 'Прочитать инструкцию' : 'купить'"
+          to="hints/howToConnect"
+        />
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import BtnBig from "~/UI/BtnBig/BtnBig.vue";
+import BtnBig from '~/UI/BtnBig/BtnBig.vue'
 
 export default {
-  name: "HowToConnect",
-  components: {BtnBig},
+  name: 'HowToConnect',
+  components: { BtnBig },
   computed: {
     windowWidth: {
       get() {
         return this.$store.getters.windowWidth
-      }
-    }
+      },
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.howToConnect{
-  &__card{
-    margin-top:140px;
+.howToConnect {
+  &__card {
+    margin-top: 140px;
     padding: 40px;
-    background: linear-gradient(263.89deg, #E5E1FF 18.89%, #DEE9FF 110.43%);
+    background: linear-gradient(263.89deg, #e5e1ff 18.89%, #dee9ff 110.43%);
     border-radius: 40px;
-    h2{
-      color: #2400FF;
+    h2 {
+      color: #2400ff;
     }
-    p{
-      margin-top:20px;
+    p {
+      margin-top: 20px;
       max-width: 815px;
     }
-    a{
+    a {
       margin-top: 40px;
     }
   }
 }
 @media (max-width: 640px) {
-  .howToConnect{
-    &__card{
+  .howToConnect {
+    &__card {
       margin-top: 80px;
       padding: 20px;
-      a{
+      a {
         width: 100%;
       }
     }

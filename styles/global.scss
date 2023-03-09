@@ -1,12 +1,16 @@
-@import "fonts";
-@import "variables";
-@import "mixins";
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
 
 // шаблоны
-@media (max-width: 1600px) and (min-width: 1024px) {}
-@media (max-width: 1200px) and (min-width: 961px) {}
-@media (max-width: 960px) and (min-width: 641px) {}
-@media (max-width: 640px) {}
+@media (max-width: 1600px) and (min-width: 1024px) {
+}
+@media (max-width: 1200px) and (min-width: 961px) {
+}
+@media (max-width: 960px) and (min-width: 641px) {
+}
+@media (max-width: 640px) {
+}
 
 * {
   box-sizing: border-box;
@@ -15,7 +19,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 html {
-  background: #F5F5F5;
+  background: #f5f5f5;
 }
 .container {
   width: 100%;
@@ -37,10 +41,10 @@ h1 {
   letter-spacing: 0.005em;
   color: $colorText;
   span {
-    color: #0046D3;
+    color: #0046d3;
   }
 }
-h2{
+h2 {
   font-family: 'Manrope', sans-serif;
   font-style: normal;
   font-weight: 800;
@@ -53,9 +57,8 @@ h2{
   /* Text */
 
   color: #001223;
-
 }
-h4{
+h4 {
   @include h4;
 }
 a {
@@ -71,10 +74,10 @@ a {
 }
 
 p {
-  @include mainText
+  @include mainText;
 }
 
-.btn-UI{
+.btn-UI {
   font-family: 'Manrope', sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -82,19 +85,18 @@ p {
   line-height: 33px;
   /* identical to box height */
 
-
   /* Text */
 
   color: $colorText;
 }
 
-h3{
-  font-family: 'Manrope',sans-serif;
+h3 {
+  font-family: 'Manrope', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 100%;
-  color: $colorH3blue
+  color: $colorH3blue;
 }
 
 @media (max-width: 641px) {
@@ -122,7 +124,7 @@ h3{
     line-height: 100%;
     letter-spacing: 0.005em;
   }
-  h2{
+  h2 {
     font-family: 'Manrope', sans-serif;
     font-style: normal;
     font-weight: 800;
@@ -130,9 +132,8 @@ h3{
     line-height: 100%;
     letter-spacing: 0.005em;
     color: #001223;
-
   }
-  h3{
+  h3 {
     font-family: 'Manrope', sans-serif;
     font-style: normal;
     font-weight: 700;

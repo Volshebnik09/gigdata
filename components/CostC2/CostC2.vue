@@ -2,43 +2,45 @@
   <section class="costC2">
     <div class="container">
       <div class="costC2__card">
-        <h2>
-          Стоимость
-        </h2>
+        <h2>Стоимость</h2>
         <p>
-          Бесплатно до 10 тысяч запросов в день. Больше — в составе годовой подписки
+          Бесплатно до 10 тысяч запросов в день. Больше — в составе годовой
+          подписки
         </p>
-        <BtnBig to="#" :text="windowWidth>764? 'Посмотреть тарифы':'купить'"/>
+        <BtnBig
+          to="#"
+          :text="windowWidth > 764 ? 'Посмотреть тарифы' : 'купить'"
+        />
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import BtnBig from "@/UI/BtnBig/BtnBig.vue";
+import BtnBig from '@/UI/BtnBig/BtnBig.vue'
 
 export default {
-  name: "CostC2",
-  components: {BtnBig},
+  name: 'CostC2',
+  components: { BtnBig },
   computed: {
     windowWidth: {
       get() {
         return this.$store.getters.windowWidth
-      }
-    }
+      },
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/variables.scss";
+@import '@/styles/variables.scss';
 
 .costC2 {
   margin-top: 140px;
 
   &__card {
     padding: 40px;
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 40px;
 
     h2 {

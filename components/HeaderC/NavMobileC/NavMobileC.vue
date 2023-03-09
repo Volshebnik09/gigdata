@@ -2,13 +2,17 @@
   <transition name="fade">
     <div class="navMobileBLock" v-if="openOrClose" ref="navMobile">
       <div class="navMobile__shadow" :style="`height: ${getHeight()}px`"></div>
-      <div class="navMobile" >
+      <div class="navMobile">
         <div class="container">
           <div class="navMobile__header">
             <router-link to="/">
-              <img :src="require('@/images/logo.svg')" alt="">
+              <img :src="require('@/images/logo.svg')" alt="" />
             </router-link>
-            <img :src="require('@/images/Frame 608.svg')" alt="" @click="closeNav">
+            <img
+              :src="require('@/images/Frame 608.svg')"
+              alt=""
+              @click="closeNav"
+            />
           </div>
           <NavC class="navMobile__nav" ref="closeBtn" />
         </div>
@@ -18,47 +22,45 @@
 </template>
 
 <script>
-import NavC from "@/components/HeaderC/NavC/NavC.vue";
-import Vue from "vue";
+import NavC from '@/components/HeaderC/NavC/NavC.vue'
+import Vue from 'vue'
 export default Vue.extend({
   props: {
-    openOrClose: Boolean
+    openOrClose: Boolean,
   },
-  components:{
-    NavC
+  components: {
+    NavC,
   },
   methods: {
-    closeNav:function(){
-      this.$emit("closeNavEvent")
+    closeNav: function () {
+      this.$emit('closeNavEvent')
     },
-    getHeight: function (){
+    getHeight: function () {
       return document.body.clientHeight
-    }
-  }
-
-
+    },
+  },
 })
 </script>
 
 <style lang="scss" scoped>
-.navMobileBLock{
+.navMobileBLock {
   width: 100%;
   z-index: 1000;
   left: 0;
-  top:0;
+  top: 0;
   position: absolute;
 }
-.navMobile__shadow{
+.navMobile__shadow {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   width: 100vw;
   background: rgba(0, 0, 0, 0.29);
 }
-.navMobile{
+.navMobile {
   z-index: 100;
   position: relative;
-  background: linear-gradient(263.89deg, #E5E1FF 18.89%, #DEE9FF 110.43%);
+  background: linear-gradient(263.89deg, #e5e1ff 18.89%, #dee9ff 110.43%);
 
   &__header {
     position: relative;
@@ -66,7 +68,7 @@ export default Vue.extend({
     padding: 10% 0;
     display: flex;
     justify-content: space-between;
-    a{
+    a {
       display: flex;
       align-items: center;
     }
@@ -84,11 +86,13 @@ export default Vue.extend({
     padding-bottom: 60px;
   }
 }
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,
+.fade-leave-active {
   transition: 0.4s;
   transform: translateX(0);
 }
-.fade-enter, .fade-leave-to  {
+.fade-enter,
+.fade-leave-to {
   transform: translateX(100%);
 }
 </style>

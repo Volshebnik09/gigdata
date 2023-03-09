@@ -1,34 +1,34 @@
 <template>
   <a>
-    <slot/>
+    <slot />
   </a>
 </template>
 
 <script>
 export default {
-  name:"BtnWithUnderlining",
+  name: 'BtnWithUnderlining',
   props: {
-    text:String
-  }
+    text: String,
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/mixins.scss";
-@import "@/styles/variables.scss";
-a{
+@import '@/styles/mixins.scss';
+@import '@/styles/variables.scss';
+a {
   @include mainText;
   cursor: pointer;
   text-align: center;
   border-bottom: 3px solid $colorH3blue;
   padding-bottom: 1px;
-  transition:0.2s;
+  transition: 0.2s;
   user-select: none;
-  &:hover{
+  &:hover {
     color: #104576;
   }
-  &:active{
-    color: #3A79B4;
+  &:active {
+    color: #3a79b4;
   }
 }
 </style>

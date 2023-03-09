@@ -1,16 +1,14 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <img :src="require('@/images/logo.svg')" alt="" class="footer__logo">
+      <img :src="require('@/images/logo.svg')" alt="" class="footer__logo" />
       <ul class="footer__add-links">
         <li><a href="#">Тарифы</a></li>
         <li><a href="#">Партнёрская программа</a></li>
         <li><a href="#">Политика конфиденциальности</a></li>
       </ul>
       <div class="footer__possibilities">
-        <h4 @click="(e)=>toggleClassOpenInParent(e)">
-          Возможности
-        </h4>
+        <h4 @click="(e) => toggleClassOpenInParent(e)">Возможности</h4>
         <ul>
           <li><a href="#">Подсказки</a></li>
           <li><a href="#">Адреса по координатам</a></li>
@@ -21,7 +19,9 @@
         </ul>
       </div>
       <div class="footer__legal-information">
-        <h4 @click="(e)=>toggleClassOpenInParent(e)">Юридическая информация</h4>
+        <h4 @click="(e) => toggleClassOpenInParent(e)">
+          Юридическая информация
+        </h4>
         <ul>
           <li>ООО «Прикладное программное обеспечение»</li>
           <li>ИНН:6829051230</li>
@@ -29,9 +29,7 @@
         </ul>
       </div>
       <div class="footer__contacts">
-        <h4
-            @click="(e)=>toggleClassOpenInParent(e)"
-        >Контакты</h4>
+        <h4 @click="(e) => toggleClassOpenInParent(e)">Контакты</h4>
         <ul>
           <li>8-800-700-30-60 по России бесплатно</li>
           <li>info@appsoftware.ru</li>
@@ -44,30 +42,30 @@
 
 <script>
 export default {
-  name: "FooterC",
+  name: 'FooterC',
   methods: {
-    toggleClassOpenInParent(e){
-      e.path[1].classList.toggle("open");
-    }
-  }
+    toggleClassOpenInParent(e) {
+      e.path[1].classList.toggle('open')
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/mixins.scss";
+@import '@/styles/mixins.scss';
 .footer {
   margin-top: 100px;
   padding: 40px 0;
-  background: linear-gradient(263.89deg, #E5E1FF 18.89%, #DEE9FF 110.43%);
+  background: linear-gradient(263.89deg, #e5e1ff 18.89%, #dee9ff 110.43%);
   .container {
     padding: 0 44px;
     display: grid;
     grid-template-columns: 27% 26%;
-    grid-template-areas:  "logo possibilities legal-information"
-                          "add-links possibilities legal-information"
-                          "add-links possibilities contacts";
-    grid-template-rows: 75px .8fr 1fr;
-
+    grid-template-areas:
+      'logo possibilities legal-information'
+      'add-links possibilities legal-information'
+      'add-links possibilities contacts';
+    grid-template-rows: 75px 0.8fr 1fr;
   }
   ul {
     margin-top: 20px;
@@ -87,8 +85,8 @@ export default {
   }
   &__possibilities {
     grid-area: possibilities;
-    a{
-      border-bottom: 2px solid #0049B7;
+    a {
+      border-bottom: 2px solid #0049b7;
       display: inline-block;
       padding: 2px 0;
     }
@@ -101,8 +99,8 @@ export default {
   }
   &__add-links {
     grid-area: add-links;
-    a{
-      border-bottom: 2px solid #0049B7;
+    a {
+      border-bottom: 2px solid #0049b7;
       display: inline-block;
       padding: 2px 0;
       max-width: 300px;
@@ -123,43 +121,43 @@ export default {
     line-height: 33px;
     /* identical to box height */
 
-
-    color: #2400FF;
+    color: #2400ff;
   }
 }
 @media (max-width: 1200px) and (min-width: 641px) {
-  .footer{
+  .footer {
     margin-top: 13%;
     .container {
       padding: 0 24px;
-      grid-template-areas: "logo possibilities"
-                           "add-links possibilities"
-                           "legal-information legal-information"
-                           "contacts contacts";
+      grid-template-areas:
+        'logo possibilities'
+        'add-links possibilities'
+        'legal-information legal-information'
+        'contacts contacts';
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 80px;
-      gap: 40px 0 ;
+      gap: 40px 0;
     }
   }
 }
 
 @media (max-width: 640px) {
-  .footer{
+  .footer {
     margin-top: 100px;
     .container {
       padding: 0 24px;
-      grid-template-areas: "logo"
-                           "add-links"
-                           "possibilities"
-                           "legal-information"
-                           "contacts";
+      grid-template-areas:
+        'logo'
+        'add-links'
+        'possibilities'
+        'legal-information'
+        'contacts';
       grid-template-columns: 1fr;
       grid-template-rows: 20px;
-      gap: 40px 0 ;
-      a{
+      gap: 40px 0;
+      a {
         border: none;
       }
-
     }
     h4 {
       font-family: 'Mulish', sans-serif;
@@ -173,34 +171,36 @@ export default {
 
       /* Color H3 blue */
 
-      color: #2400FF;
+      color: #2400ff;
     }
-    &__possibilities, &__legal-information, &__contacts{
-      transition: .5s;
+    &__possibilities,
+    &__legal-information,
+    &__contacts {
+      transition: 0.5s;
       max-height: 40px;
-      h4{
+      h4 {
         position: relative;
-        &::after{
+        &::after {
           content: '';
           position: absolute;
           right: 0;
-          background: url("@/images/Vector.svg");
-          top:5px;
+          background: url('@/images/Vector.svg');
+          top: 5px;
           height: 10px;
           width: 18px;
-          transition: .5s;
+          transition: 0.5s;
         }
       }
       ul {
         max-height: 0;
         height: auto;
         opacity: 0;
-        transition: .5s;
+        transition: 0.5s;
         overflow: hidden;
       }
       &.open {
         max-height: 400px;
-        h4::after{
+        h4::after {
           transform: rotate(180deg);
         }
         ul {

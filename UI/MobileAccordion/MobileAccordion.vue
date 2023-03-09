@@ -1,29 +1,29 @@
 <template>
-  <div :class="`mobileAccordion ${open?'open':''}`" @click="toggle">
-    <h3>{{card.title}}</h3>
-      <ul class="mobileAccordion__ul">
-        <li v-for="li in card.ul" :key="li.id">
-          {{li.text}}
-        </li>
-      </ul>
+  <div :class="`mobileAccordion ${open ? 'open' : ''}`" @click="toggle">
+    <h3>{{ card.title }}</h3>
+    <ul class="mobileAccordion__ul">
+      <li v-for="li in card.ul" :key="li.id">
+        {{ li.text }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script lang="ts">
-import Vue, {PropType} from "vue";
+import Vue, { PropType } from 'vue'
 
 type TCard = {
-  title : string;
-  ul : {
-    id: number,
-    text: string;
+  title: string
+  ul: {
+    id: number
+    text: string
   }[]
 }
 
 export default Vue.extend({
-  name: "MobileAccordion",
+  name: 'MobileAccordion',
   props: {
-    card: Object as PropType<TCard>
+    card: Object as PropType<TCard>,
   },
   data: function () {
     return {
@@ -32,16 +32,16 @@ export default Vue.extend({
   },
   methods: {
     toggle() {
-      this.open =!this.open
-    }
+      this.open = !this.open
+    },
   },
 })
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/mixins.scss";
+@import '@/styles/mixins.scss';
 .mobileAccordion {
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 20px;
   padding: 20px;
   position: relative;
@@ -51,10 +51,10 @@ export default Vue.extend({
   min-height: 88px;
   display: flex;
   flex-direction: column;
-  transition:  .5s;
+  transition: 0.5s;
   flex: 0 0 auto;
   justify-content: center;
-  h3{
+  h3 {
     text-align: center;
     width: 100%;
   }
@@ -63,7 +63,7 @@ export default Vue.extend({
     z-index: -100;
     flex-direction: column;
     gap: 21px;
-    transition:  .5s;
+    transition: 0.5s;
     max-height: 0;
     display: flex;
     opacity: 0;
@@ -73,9 +73,9 @@ export default Vue.extend({
       @include mainText;
       font-weight: 300;
       &:before {
-        content: "";
+        content: '';
         position: absolute;
-        background: linear-gradient(265.14deg, #E2DDFF 10.77%, #B6C8EC 99.08%);
+        background: linear-gradient(265.14deg, #e2ddff 10.77%, #b6c8ec 99.08%);
         border-radius: 3px;
         left: 0;
         top: 11px;
@@ -92,7 +92,7 @@ export default Vue.extend({
   align-items: flex-start;
   padding: 20px;
   gap: 20px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 20px;
   ul {
     display: flex;
@@ -100,7 +100,4 @@ export default Vue.extend({
     max-height: 600px;
   }
 }
-
-
-
 </style>

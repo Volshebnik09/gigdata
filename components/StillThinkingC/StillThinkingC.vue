@@ -1,30 +1,26 @@
 <template>
   <section class="stillThinkingC">
     <div class="container">
-      <h2>
-        Вы всё ещё думаете?
-      </h2>
-      <h3>
-        Просто попробуйте.
-      </h3>
-      <BtnFulfilled to="#" text="Попробовать бесплатно"/>
+      <h2>Вы всё ещё думаете?</h2>
+      <h3>Просто попробуйте.</h3>
+      <BtnFulfilled to="#" text="Попробовать бесплатно" />
     </div>
   </section>
 </template>
 
 <script>
-import BtnFulfilled from "@/UI/BtnFulfilled/BtnFulfilled.vue";
+import BtnFulfilled from '@/UI/BtnFulfilled/BtnFulfilled.vue'
 
 export default {
-  name: "StillThinkingC",
-  components: {BtnFulfilled}
+  name: 'StillThinkingC',
+  components: { BtnFulfilled },
 }
 </script>
 
 <style lang="scss" scoped>
-.stillThinkingC{
+.stillThinkingC {
   margin-top: 140px;
-  .container{
+  .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,7 +35,7 @@ export default {
 
     text-align: center;
   }
-  h3{
+  h3 {
     font-style: normal;
     font-weight: 800;
     font-size: 52px;
@@ -50,19 +46,19 @@ export default {
 
     /* Color H3 blue */
   }
-  a{
+  a {
     margin-top: 40px;
   }
 }
 @media (max-width: 1200px) and (min-width: 641px) {
-  .stillThinkingC{
+  .stillThinkingC {
     margin-top: 10%;
   }
 }
 @media (max-width: 640px) {
-  .stillThinkingC{
+  .stillThinkingC {
     margin-top: 80px;
-    h2{
+    h2 {
       font-style: normal;
       font-weight: 700;
       font-size: 22px;
@@ -71,7 +67,7 @@ export default {
 
       text-align: center;
     }
-    h3{
+    h3 {
       font-style: normal;
       font-weight: 800;
       font-size: 28px;
@@ -80,7 +76,6 @@ export default {
 
       text-align: center;
       letter-spacing: 0.005em;
-
     }
   }
 }

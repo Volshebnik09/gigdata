@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 @mixin mainText {
   font-family: 'Mulish', sans-serif;
@@ -40,7 +40,7 @@
     font-size: 16px;
     line-height: 20px;
     letter-spacing: -0.015em;
-    color: #8FA0B7;
+    color: #8fa0b7;
   }
 }
 

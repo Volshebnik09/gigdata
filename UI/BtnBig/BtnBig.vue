@@ -1,27 +1,27 @@
 <template>
-  <router-link :to="to" class="BtnBig">{{text}}</router-link>
+  <router-link :to="to" class="BtnBig">{{ text }}</router-link>
 </template>
 
 <script>
 export default {
-  name:"BtnBig",
-  props:{
+  name: 'BtnBig',
+  props: {
     text: String,
     to: {
       require: true,
-      type: String
+      type: String,
     },
-  }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-.BtnBig{
+.BtnBig {
   text-align: center;
   user-select: none;
   border-radius: 80px;
   padding: 20px 40px;
-  border: 3px solid #1700A5;
+  border: 3px solid #1700a5;
   font-family: 'Manrope', sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -30,25 +30,24 @@ export default {
   /* identical to box height */
   display: inline-block;
 
-
   /* Text */
 
   color: #001223;
-  &:hover{
-    background: #CCE0FF;
+  &:hover {
+    background: #cce0ff;
   }
-  &:active{
-    background: #0049B7;
-    color: #FFFFFF;
+  &:active {
+    background: #0049b7;
+    color: #ffffff;
   }
-  &:disabled{
-   border-color: #B0BED3;
-    color: #404C5C;;
+  &:disabled {
+    border-color: #b0bed3;
+    color: #404c5c;
   }
 }
 
 @media (max-width: 641px) {
-  .BtnBig{
+  .BtnBig {
     font-style: normal;
     font-weight: 600;
     font-size: 16px;

@@ -1,21 +1,21 @@
 <template>
-  <h4 :class="active?'active':''" @click="clickEmit">
-    {{text}}
+  <h4 :class="active ? 'active' : ''" @click="clickEmit">
+    {{ text }}
   </h4>
 </template>
 
 <script>
 export default {
-  name: "TabUI1",
+  name: 'TabUI1',
   props: {
     text: String,
     active: Boolean,
   },
-  methods:{
-    clickEmit:function (e){
-      this.$emit('click',e)
-    }
-  }
+  methods: {
+    clickEmit: function (e) {
+      this.$emit('click', e)
+    },
+  },
 }
 </script>
 
@@ -29,15 +29,15 @@ h4 {
   padding: 10px;
   gap: 10px;
   position: relative;
-  color: #8FA0B7;
+  color: #8fa0b7;
   cursor: pointer;
   width: 260px;
-  &.active{
+  &.active {
     color: #001223;
     padding-bottom: 20px;
     &:after {
       width: 95%;
-      background: #0049B7;
+      background: #0049b7;
       height: 3px;
       position: absolute;
       left: 50%;

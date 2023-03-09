@@ -1,37 +1,27 @@
 <template>
-  <button
-    type="submit"
-    v-if="type === 'submit'"
-  >{{text}}
-  </button>
-  <router-link
-    v-else
-    :to="to"
-    class="BtnFulfilled"
-  >{{text}}
-  </router-link>
+  <button type="submit" v-if="type === 'submit'">{{ text }}</button>
+  <router-link v-else :to="to" class="BtnFulfilled">{{ text }} </router-link>
 </template>
 
 <script lang="ts">
+import Vue, { PropType } from 'vue'
 
-import Vue, {PropType} from "vue";
-
-type TBtnType = "submit" | undefined
+type TBtnType = 'submit' | undefined
 export default Vue.extend({
-  name: "BtnFulfilled",
-  props:{
+  name: 'BtnFulfilled',
+  props: {
     text: String,
     type: String as PropType<TBtnType>,
     to: {
       type: String,
-      default: ''
-    }
-  }
+      default: '',
+    },
+  },
 })
 </script>
 
 <style lang="scss" scoped>
-.BtnFulfilled{
+.BtnFulfilled {
   text-align: center;
   user-select: none;
   font-family: 'Manrope', sans-serif;
@@ -44,20 +34,20 @@ export default Vue.extend({
   white-space: nowrap;
   /* white */
 
-  color: #FFFFFF;
+  color: #ffffff;
   display: inline-block;
   padding: 20px 40px;
-  background: #0049B7;
+  background: #0049b7;
   border-radius: 80px;
-  &:hover{
-    background: #4A93FF;
+  &:hover {
+    background: #4a93ff;
   }
-  &:active{
-    background: #00327D;
+  &:active {
+    background: #00327d;
   }
-  &:disabled{
-    color: #404C5C;
-    background: #B0BED3;
+  &:disabled {
+    color: #404c5c;
+    background: #b0bed3;
   }
 }
 @media (max-width: 641px) {
@@ -66,7 +56,7 @@ export default Vue.extend({
     font-size: 16px;
     padding: 20px 40px;
     line-height: 22px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 }
 </style>
