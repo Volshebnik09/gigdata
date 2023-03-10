@@ -91,12 +91,7 @@ p {
 }
 
 h3 {
-  font-family: 'Manrope', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 100%;
-  color: $colorH3blue;
+  @include h3
 }
 
 @media (max-width: 641px) {

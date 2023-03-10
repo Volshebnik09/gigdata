@@ -109,3 +109,19 @@
 
   color: $colorH3Violet;
 }
+
+@mixin h3 {
+  font-family: 'Manrope', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  color: $colorH3blue;
+  @media (max-width: 640px){
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 100%;
+    /* identical to box height, or 22px */
+  }
+}

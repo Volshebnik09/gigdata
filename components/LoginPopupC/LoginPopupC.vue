@@ -1,9 +1,11 @@
 <template>
-  <div class="loginPopup">
-    <form class="loginPopup__form" ref="form">
+  <div class="loginPopup" @click="closeEmit">
+    <form class="loginPopup__form" ref="form" @click="(e)=>e.stopPropagation()">
       <div class="loginPopup__form__header">
         <img :src="require('@/images/logo.svg')" alt="" />
-        <img @click="closeEmit" :src="require('@/images/close.svg')" alt="" />
+        <CloseBtnUI
+          @click="closeEmit"
+        />
       </div>
       <h2>Войдите</h2>
       <div class="loginPopup__form__email">
@@ -50,10 +52,11 @@ import CheckBoxUI from '~/UI/CheckBoxUI/CheckBoxUI.vue'
 import { nextTick } from 'vue'
 import BtnWithUnderlining from '~/UI/BtnWithUnderlining/BtnWithUnderlining.vue'
 import BtnFulfilled from '~/UI/BtnFulfilled/BtnFulfilled.vue'
+import CloseBtnUI from "~/UI/CloseBtnUI/CloseBtnUI.vue";
 
 export default {
   name: 'LoginPopupC',
-  components: { BtnFulfilled, BtnWithUnderlining, CheckBoxUI, InputUI },
+  components: {CloseBtnUI, BtnFulfilled, BtnWithUnderlining, CheckBoxUI, InputUI },
   mounted() {
     this.defaultBodyPosition = document.body.position
     this.defaultBodyOverflow = document.body.overflow
@@ -84,8 +87,16 @@ export default {
         return this.$store.getters.windowHeight
       },
     },
+    windowWidth: {
+      get() {
+        return this.$store.getters.windowWidth
+      },
+    },
   },
   watch: {
+    windowWidth() {
+      this.setFlexAlignItems(this.windowHeight)
+    },
     windowHeight(newWindowHeight) {
       this.setFlexAlignItems(newWindowHeight)
     },
@@ -100,7 +111,6 @@ export default {
       else this.flexAlignItems = 'center'
     },
     rememberMeToggle: function () {
-      console.log(this.rememberMeCheck)
       this.rememberMeCheck = !this.rememberMeCheck
     },
   },
@@ -108,7 +118,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
 .loginPopup {
+  cursor: pointer;
   position: fixed;
   top: 0;
   left: 0;
@@ -122,7 +135,8 @@ export default {
   overflow-y: scroll;
 
   &__form {
-    max-width: 600px;
+    cursor: auto;
+    max-width: 620px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -134,8 +148,8 @@ export default {
       #ffffff;
     border-radius: 40px;
     padding: 40px;
+    margin: 0 20px;
     &__header {
-      height: 60px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -146,12 +160,18 @@ export default {
     h2 {
       margin-top: 40px;
       text-align: center;
+      margin-bottom: 20px;
     }
     &__email,
     &__password {
       margin-top: 40px;
       h4 {
         margin-bottom: 21px;
+        padding-left: 10px;
+        color: $colorText
+      }
+      &::v-deep input {
+        height: 53px;
       }
     }
     &__rememberMeAndForgotPassword {
@@ -167,6 +187,53 @@ export default {
     &__IDontHaveAccount {
       margin-top: 40px;
       align-self: center;
+    }
+  }
+}
+@media (max-width: 640px) {
+  .loginPopup{
+    &__form {
+      padding: 20px 10px;
+      border-radius: 20px;
+      &__header{
+      }
+      img {
+        max-width: 100px;
+      }
+      svg{
+        height: 40px;
+        width: 40px;
+      }
+      h2{
+        margin-top: 20px;
+      }
+      &__email,
+      &__password {
+        margin-top: 0;
+        h4 {
+          @include h3;
+          margin-bottom: 10px;
+          padding-left: 10px;
+          color: $colorText
+        }
+        &::v-deep input {
+          height: 34px;
+        }
+      }
+      &__password{
+        margin-top: 20px;
+      }
+      &__rememberMeAndForgotPassword{
+        flex-direction: column;
+        align-items: flex-start;
+        a{
+          align-self: center;
+          margin-top: 20px;
+        }
+      }
+      &__submitBtn{
+        width: 100%;
+      }
     }
   }
 }

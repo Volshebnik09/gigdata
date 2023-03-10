@@ -53,6 +53,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/mixins.scss";
 .inputUI {
   border: 3px solid #0049b7;
   padding: 7px 17px;
@@ -100,20 +101,13 @@ export default Vue.extend({
 }
 @media (max-width: 640px) {
   .inputUI {
-    padding: 12px 8px;
+    padding: 8px 8px;
     border-width: 2px;
     border-radius: 54px;
+    height: 34px;
     &::placeholder {
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      /* identical to box height */
-
-      letter-spacing: -0.015em;
-
-      /* light */
-
-      color: #8fa0b7;
+      @include smallText;
+      color: #404C5C;
     }
   }
 }

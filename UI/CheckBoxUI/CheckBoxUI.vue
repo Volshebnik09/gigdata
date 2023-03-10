@@ -38,6 +38,7 @@ export default {
     border-radius: 5px;
     width: 25px;
     height: 25px;
+    flex-shrink: 0;
   }
   align-items: center;
   span {

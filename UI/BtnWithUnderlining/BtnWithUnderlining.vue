@@ -24,6 +24,7 @@ a {
   padding-bottom: 1px;
   transition: 0.2s;
   user-select: none;
+  padding: 0 10px;
   &:hover {
     color: #104576;
   }
