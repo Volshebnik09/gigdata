@@ -3,7 +3,7 @@
     <form class="loginPopup__form" ref="form">
       <div class="loginPopup__form__header">
         <img :src="require('@/images/logo.svg')" alt="" />
-        <img @click="closeEmit" :src="require('@/images/закрыть.svg')" alt="" />
+        <img @click="closeEmit" :src="require('@/images/close.svg')" alt="" />
       </div>
       <h2>Войдите</h2>
       <div class="loginPopup__form__email">
