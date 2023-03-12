@@ -17,6 +17,7 @@ export default {
 
 h4{
   cursor: pointer;
+  padding: 10px 0;
   &:hover{
     color: #104576;
   }

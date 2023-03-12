@@ -28,6 +28,7 @@ import InputUI from "~/UI/InputUI/InputUI.vue";
 import ReloadBtn from "~/UI/ReloadBtn/ReloadBtn.vue";
 import CopyBtn from "~/UI/CopyBtn/CopyBtn.vue";
 import ProfileTab from "~/components/LkTabs/tabs/profile/ProfileTab.vue";
+import PaymentHistory from "~/components/LkTabs/tabs/PaymentHistory/PaymentHistory.vue";
 
 export default {
   name: "LkTabs",
@@ -46,11 +47,11 @@ export default {
         //   tabComponent: ProfileTab,
         //   id: 1,
         // },
-        // {
-        //   tabName: "История платежей",
-        //   tabComponent: ProfileTab,
-        //   id: 2,
-        // },
+        {
+          tabName: "История платежей",
+          tabComponent: PaymentHistory,
+          id: 2,
+        },
         // {
         //   tabName: "Реквизиты для акта",
         //   tabComponent: ProfileTab,
@@ -84,9 +85,10 @@ export default {
       margin-right: 34px;
       flex-shrink: 0;
       ul {
+        min-width: 280px;
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 20px;
         li {
           font-family: 'Manrope', sans-serif;
           list-style: none;
@@ -135,7 +137,7 @@ export default {
       ul {
         flex-direction: row;
         flex-wrap: wrap;
-        gap:40px 10%;
+        gap:20px 10%;
         justify-content: space-between;
       }
     }
