@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a,b){return {staticAssetsBase:"\u002Fgigdata\u002F_nuxt\u002Fstatic\u002F1678638852",layout:"default",error:a,state:{windowWidth:b,windowHeight:b},serverRendered:true,routePath:"\u002Fhints\u002FhowToConnect\u002Fhints-address",config:{_app:{basePath:"\u002Fgigdata\u002F",assetsPath:"\u002Fgigdata\u002F_nuxt\u002F",cdnURL:a}}}}(null,0));
