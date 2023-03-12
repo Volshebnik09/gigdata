@@ -5,49 +5,17 @@
       <div class="lkTabs__block">
         <nav class="lkTabs__block__nav">
           <ul>
-            <li><TabUI2>Профиль</TabUI2></li>
-            <li><TabUI2>Статистика</TabUI2></li>
-            <li><TabUI2>История платежей</TabUI2></li>
-            <li><TabUI2>Реквизиты для акта</TabUI2></li>
-            <li><TabUI2>Счёт на оплату</TabUI2></li>
+            <li v-for="(tab) in tabs"
+                @click="currentTabId=tab.id"
+            ><TabUI2
+              :active="currentTabId===tab.id"
+            >{{tab.tabName}}</TabUI2></li>
           </ul>
         </nav>
         <div class="lkTabs__block__tabs">
-          <div class="lkTabs__block__tab">
-            <div class="lkTabs__block__tab__personalInfo">
-              <h3>Персональная информация</h3>
-              <div class="lkTabs__block__tab__personalInfo__input-container">
-                <div class="lkTabs__block__tab__personalInfo__input-title">ФИО</div>
-                <InputUI
-                  placeholder="Иванов Иван Иванович"
-                  class="lkTabs__block__tab__keys__input"
-                />
-              </div>
-              <div class="lkTabs__block__tab__personalInfo__input-container">
-                <div class="lkTabs__block__tab__personalInfo__input-title">Компания</div>
-                <InputUI
-                  placeholder="ООО им. Иванова Ивана Ивановича"
-                  class="lkTabs__block__tab__keys__input"
-                />
-              </div>
-              <div class="lkTabs__block__tab__personalInfo__input-container">
-                <div class="lkTabs__block__tab__personalInfo__input-title">E-mail</div>
-                <InputUI
-                  placeholder="ivanovii@emai.com"
-                  class="lkTabs__block__tab__keys__input"
-                />
-              </div>
-              <div class="lkTabs__block__tab__personalInfo__input-container">
-                <div class="lkTabs__block__tab__personalInfo__input-title">Телефон</div>
-                <InputUI
-                  placeholder="+7 (999) 999-99-99"
-                  class="lkTabs__block__tab__keys__input"
-                />
-              </div>
-            </div>
-            <KeysC v-if="windowWidth>640"/>
-          </div>
-          <KeysC v-if="windowWidth<=640"/>
+          <component
+            :is="tabs.find(el=>el.id===currentTabId).tabComponent"
+          />
         </div>
       </div>
     </div>
@@ -59,18 +27,44 @@ import TabUI2 from "~/UI/TabUI2/TabUI2.vue";
 import InputUI from "~/UI/InputUI/InputUI.vue";
 import ReloadBtn from "~/UI/ReloadBtn/ReloadBtn.vue";
 import CopyBtn from "~/UI/CopyBtn/CopyBtn.vue";
-import KeysC from "~/components/LkTabs/KeysC.vue";
+import ProfileTab from "~/components/LkTabs/tabs/profile/ProfileTab.vue";
 
 export default {
   name: "LkTabs",
-  components: {KeysC, CopyBtn, ReloadBtn, InputUI, TabUI2},
-  computed: {
-    windowWidth:{
-      get(){
-        return this.$store.getters.windowWidth
-      }
+  components: {CopyBtn, ReloadBtn, InputUI, TabUI2},
+  data: function (){
+    return{
+      currentTabId: 0,
+      tabs: [
+        {
+          tabName: "Профиль",
+          tabComponent: ProfileTab,
+          id: 0,
+        },
+        // {
+        //   tabName: "Статистика",
+        //   tabComponent: ProfileTab,
+        //   id: 1,
+        // },
+        // {
+        //   tabName: "История платежей",
+        //   tabComponent: ProfileTab,
+        //   id: 2,
+        // },
+        // {
+        //   tabName: "Реквизиты для акта",
+        //   tabComponent: ProfileTab,
+        //   id: 3,
+        // },
+        // {
+        //   tabName: "Счёт на оплату",
+        //   tabComponent: ProfileTab,
+        //   id: 4,
+        // }
+      ]
     }
   }
+
 
 }
 </script>
@@ -113,56 +107,7 @@ export default {
   }
 }
 
-.lkTabs__block__tab{
-  background: #FFFFFF;
-  border-radius: 40px;
-  width: 100%;
-  padding: 40px;
-  &__personalInfo, &__keys{
-    h3{
-      color:$colorText;
-    }
-    &__input-container{
-      margin-top: 20px;
-    }
-    &__input-title{
-      margin-bottom: 10px;
-      @include mainText;
-    }
-    &__input-reload{
-      margin-top: 10px;
-      grid-area: reload;
-    }
-    &__input {
-      grid-area: input;
-    }
-    &__input-copyBtn::v-deep{
-      grid-area: copy;
-      margin-left: 10px;
-      .copyBtn__text{
-        display: none;
-      }
-    }
-  }
-  &__personalInfo{
-      max-width: 520px;
-  }
-  &__keys{
-    margin-top: 40px;
-    &__input-container{
-      margin-top: 20px;
-      align-items: center;
-      position: relative;
-      margin-right: 50px;
-      max-width: 680px;
-    }
-    &__input-copyBtn{
-      position: absolute;
-      top:45px;
-      right: -50px;
-    }
-  }
-}
+
 
 @media (max-width: 1200px) and (min-width: 641px){
   .lkTabs__block{
