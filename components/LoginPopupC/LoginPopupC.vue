@@ -58,18 +58,18 @@ export default {
   name: 'LoginPopupC',
   components: {CloseBtnUI, BtnFulfilled, BtnWithUnderlining, CheckBoxUI, InputUI },
   mounted() {
-    this.defaultBodyPosition = document.body.position
-    this.defaultBodyOverflow = document.body.overflow
-    document.body.position = 'fixed'
-    document.body.overflow = 'hidden'
+    // this.defaultBodyPosition = document.body.position
+    // this.defaultBodyOverflow = document.body.overflow
+    // document.body.position = 'fixed'
+    // document.body.overflow = 'hidden'
     nextTick(() => {
       this.setFlexAlignItems(this.windowHeight)
     })
   },
   beforeDestroy() {
     this.closeEmit()
-    document.body.position = this.defaultBodyPosition
-    document.body.overflow = this.defaultBodyOverflow
+    // document.body.position = this.defaultBodyPosition
+    // document.body.overflow = this.defaultBodyOverflow
   },
   data: function () {
     return {
