@@ -5,6 +5,7 @@
       class="inputUI"
       :disabled="disable"
       @input="inputEmit"
+      :value="text"
       :type="type ? type : 'text'"
     />
     <span v-if="notify">{{ notify.message }}</span>
