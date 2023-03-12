@@ -21,10 +21,9 @@ a {
   cursor: pointer;
   text-align: center;
   border-bottom: 3px solid $colorH3blue;
-  padding-bottom: 1px;
   transition: 0.2s;
   user-select: none;
-  padding: 0 10px;
+  padding: 0 10px 3px;
   &:hover {
     color: #104576;
   }

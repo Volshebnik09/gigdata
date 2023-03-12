@@ -45,8 +45,8 @@ export default {
 @import "@/styles/mixins.scss";
 .paymentHistory{
   max-width: 100%;
-  overflow: scroll;
   &__table-holder{
+    min-width: 100%;
     padding: 40px;
     margin-top: 20px;
     width: fit-content;
@@ -71,6 +71,7 @@ export default {
 }
 @media (max-width: 640px) {
   .paymentHistory{
+    overflow: scroll;
     table{
       th{
         font-style: normal;
